@@ -17,8 +17,8 @@ logger.addHandler(handler)
 @st.cache
 def cached_data():
     # データの読み込み
-    tdfk = pd.read_csv("tdfk.csv",encoding="utf-8")["tdfk"].values.tolist()
-    review_data_file_path = []
+    tdfk = pd.read_csv("prefectures.csv",encoding="utf-8")["tdfk"].values.tolist()
+
     shop_file_path = []
     for t in tdfk:
         shop_file_path.append(glob.glob(os.path.join("data",t, "*", "shop_data.csv")))
